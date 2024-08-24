@@ -6,17 +6,20 @@ public class XD {
 
         int n = sc.nextInt();
         int array[] = new int[n];
-        int sum = 0;
-        int sumMax = 0;
 
         for (int i = 0; i < n; i++) {
-
             array[i] = sc.nextInt();
-            sum += array[i];
+        }
+
+        int sum = array[0];
+        int sumMax = array[0];
+
+        for (int i = 0; i < n; i++) {
+            sum = Math.max(array[i], sum + array[i]);
 
             if (sumMax < sum) {
                 sumMax = sum;
-            } // todo bein
+            }
 
         }
 
