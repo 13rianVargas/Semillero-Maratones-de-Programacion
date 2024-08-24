@@ -15,7 +15,7 @@ public class XD {
         int sumMax = array[0];
 
         for (int i = 0; i < n; i++) {
-            sum = Math.max(array[i], sum + array[i]);
+            sum = Math.max(sum + array[i], array[i]);
 
             if (sumMax < sum) {
                 sumMax = sum;
