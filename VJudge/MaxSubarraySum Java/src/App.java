@@ -5,19 +5,19 @@ public class App {
         Scanner sc = new Scanner(System.in);
 
         long n = sc.nextLong();
-        long array[] = new long[(int)n];
+        long x[] = new long[(int)n];
 
         for (int i = 0; i < n; i++) {
-            array[i]= sc.nextLong();
+            x[i]= sc.nextLong();
         }
 
-        long sum = array[0];
-        long max = array[0];
+        long sum = x[0];
+        long max = x[0];
 
         for (int i = 1; i < n; i++) {
-            sum += array[i];
-            if (array[i] > sum) {
-                sum = array[i];
+            sum += x[i];
+            if (x[i] > sum) {
+                sum = x[i];
             }
             if(sum > max){
                 max = sum;
