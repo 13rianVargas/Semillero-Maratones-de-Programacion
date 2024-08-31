@@ -1,39 +1,34 @@
-#include <iostream>;
-#include <unordered_map>
-#include <vector>
-
+#include <bits/stdc++.h>
 using namespace std;
+#define ll long long
 
-int main()
-{
-    map<int, int> dicc; //diccionario
+int main(){
+    
+    ll num;
+    cin >> num;
 
-    long long n, target;
-    cin>>n>>target;
+    const ll size = num;
 
-    long long arr[n];
+    ll target;
+    cin >> target;
+    
+    vector <ll> array(num);
 
-    for(int i=0;i<n;i++){
-        cin>>arr[i];
+    for(ll i = 0; i < num; i++) {
+        cin >> array[i];
     }
+    
+    ll prefixSum[size];//TODO: check the path of clang ¬¬
 
-    unordered_map<int, int> pfSum;//prefix-sum
-    long long currentSum = 0;
-    long long count = 0;
-
-    pfSum[0] = 1;
-
-    for (int i = 0; i < n; ++i) {
-        currentSum += arr[i];
-
-        if (pfSum.find(currentSum - target) != pfSum.end()) {
-            count += pfSum[currentSum - target];
-        }
-
-        pfSum[currentSum]++;
+    prefixSum[0] = array[0];
+    for (ll i = 0; i < num; i++)
+    {
+        /* code */
     }
+    
+    
 
-    cout << count << endl;
+    cout<<target<<endl;
 
     return 0;
 }
