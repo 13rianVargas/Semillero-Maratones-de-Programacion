@@ -4,14 +4,14 @@ import java.util.*;
 public class JumboExtraCheese2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int t = sc.nextInt();
+        int tests = sc.nextInt();
 
-        for (int i = 0; i < t; i++) {
-            int n = sc.nextInt();
+        for (int i = 0; i < tests; i++) {
+            int cheeseSlices = sc.nextInt();
 
             long bases = 0;
             long max = 0;
-            for (int j = 0; j < n; j++) {
+            for (int j = 0; j < cheeseSlices; j++) {
                 long x = sc.nextLong();
                 long y = sc.nextLong();
                 long small = Math.min(x, y);
