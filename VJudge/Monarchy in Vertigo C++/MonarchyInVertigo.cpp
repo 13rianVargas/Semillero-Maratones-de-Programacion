@@ -50,3 +50,63 @@ int main(){
 
     return 0;
 }
+
+/*/
+    vector<bool> live(100001,true);
+    vector<vll> adj;
+    vector<bool> visited(100001,false);
+    
+    qll q;
+    
+    void dfs(ll k){
+        if(visited[k])return;
+        visited[k] = true;
+        q.push(k);
+        for(ll x : adj[k]){
+            dfs(x);
+        }
+    }
+    
+    void solve() {
+        ll n; cin >> n;
+        
+        vll die;
+        ll min = 1;
+        adj.resize(n+2);
+        cf(i,1,n){
+            ll s,n; cin >> s >> n;
+            if(s == 1){
+                adj[n].pb(++min);
+            } else {
+                die.pb(n);
+            }
+        }
+
+        dfs(1);
+
+        vll res;
+        for(ll d : die){
+            live[d] = false;
+            while(!live[q.front()] && !q.empty()){
+                q.pop();
+            }
+            res.pb(q.front());
+        }
+        
+        for(ll num : res){
+            cout << num << endl;
+        }
+    }
+    
+    int main() {
+        ios_base::sync_with_stdio(false);
+        cin.tie(0);
+    
+        ll t = 1;
+        //cin >> t;
+        while(t--)
+            solve();
+    
+        return 0;
+    }
+//*/
